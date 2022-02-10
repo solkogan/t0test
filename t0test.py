@@ -28,10 +28,10 @@ while True:
 
     vopros = input('Введи вопрос: ')
 
-    vopros = translation_ru_en.translate(vopros)
+    vopros = translation_ru_en.translate(vopros + '?')
 
     otvet = tokenizer.decode(model.generate(tokenizer.encode(vopros, return_tensors="pt").to(device))[0])
 
     otvet = re.sub(r'(\<(/?[^>]+)>)', '', otvet)
 
-    print(translation_en_ru.translate(otvet+'?'))
+    print(translation_en_ru.translate(otvet))
