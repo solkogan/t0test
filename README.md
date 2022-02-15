@@ -17,3 +17,5 @@ argospm search
 argospm install translate-ru_en
 
 argospm install translate-en_ru
+
+Возможно, вам придется поменять номера установленных языков переводчика 
