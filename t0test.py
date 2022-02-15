@@ -7,16 +7,16 @@
 
 # argospm update
 # argospm search
-# argospm install translate-ru_en
 # argospm install translate-en_ru
+# argospm install translate-ru_en
 
 import torch, re
 from argostranslate import package, translate
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 installed_languages = translate.load_installed_languages()
-translation_en_ru = installed_languages[0].get_translation(installed_languages[7])
-translation_ru_en = installed_languages[7].get_translation(installed_languages[0])
+translation_en_ru = installed_languages[0].get_translation(installed_languages[1])
+translation_ru_en = installed_languages[1].get_translation(installed_languages[0])
 
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
