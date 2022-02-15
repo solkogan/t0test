@@ -14,7 +14,19 @@ import torch, re
 from argostranslate import package, translate
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
+# Расскомментируйте чтобы установить модели из файлов
+# Файлы можно скачать тут: https://www.argosopentech.com/argospm/index/
+# package.install_from_path('ru_en.argosmodel')
+# package.install_from_path('en_ru.argosmodel')
+
+installed_languages = translate.get_installed_languages()
+
+for lang in installed_languages:
+    print(str(lang))
+
 installed_languages = translate.load_installed_languages()
+
+# Замените индексы установленных языков с 0 и 1 на те которые соответствуют русскому и английскому
 translation_en_ru = installed_languages[0].get_translation(installed_languages[1])
 translation_ru_en = installed_languages[1].get_translation(installed_languages[0])
 
